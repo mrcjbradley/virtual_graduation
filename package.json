@@ -5,7 +5,10 @@
   "privat": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npx webpack -w --mode=development"
+    "start": "npx webpack -w --mode=development",
+    "build": "webpack --watch --mode=development",
+    "deploy": "npm run build && gh-pages -d dist",
+    "pages": "gh-pages -d build"
   },
   "keywords": [],
   "author": "",
