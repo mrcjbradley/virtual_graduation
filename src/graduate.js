@@ -46,10 +46,7 @@ class Graduate {
                 button.disabled = false
                 studentName.innerHTML  = ""
             }
-
         }, 100)
-
-
     }
 
     jumpAndGrabDiploma() {
