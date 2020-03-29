@@ -23,7 +23,7 @@ class Graduate {
             startingPosition[0], startingPosition[1],
             spriteSize[0], spriteSize[1])
         
-        this.ctx.drawImage(this.img_url, 170, 100, 150, 150)
+        this.ctx.drawImage(this.img_url, 150, 100, 200, 150)
 
     }
 

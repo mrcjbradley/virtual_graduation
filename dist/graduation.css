@@ -12,3 +12,34 @@
 #student{
     text-align: center;
 }
+
+#graduate-stoods-title{
+    display: flex;
+    justify-content: space-around;
+}
+.app-academy-logo{
+    height: 50px;
+    width: auto;
+    margin-right: 15px;
+}
+
+.cohort-title-container{
+    display: flex;
+    align-items: center;
+}
+
+.throwing-hats-gif{
+    height: 500px
+}
+
+.throwing-hats-gif-container{
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+}
+
+body{
+    color: white;
+    background: rgb(26, 18, 18);
+}
+
