@@ -1,16 +1,17 @@
 class Ceremony {
     constructor(ctx, graduates, currentStudent = 0) {
-        this.ctx = ctx
-        this.graduates = graduates
-        this.currentStudent = currentStudent
-        this.megamanSpriteSheet = new Image()
+        this.ctx = ctx;
+        this.graduates = graduates;
+        this.currentStudent = currentStudent;
+        this.megamanSpriteSheet = new Image();
         this.stage = new Image();
-        this.audienceChairs = new Image()
+        this.audienceChairs = new Image();
+        this.diploma = new Image();
 
-        this.megamanSpriteSheet.src = "./megaman_sprite_sheet.png"
+        this.megamanSpriteSheet.src = "./megaman_sprite_sheet.png";
         this.stage.src = './pixel_art_stage.png';
-        this.audienceChairs.src = "./theatre_chairs.png"
-
+        this.audienceChairs.src = "./theatre_chairs.png";
+        this.diploma.src = "./diploma.png";
     }
 
     constructStage() {
@@ -24,8 +25,9 @@ class Ceremony {
             this.ctx.drawImage(this.megamanSpriteSheet,
                 waitingSprite[0], waitingSprite[1],
                 spriteSize[0], spriteSize[1],
-                80, 250,
-                spriteSize[0], spriteSize[1])
+                80, 245,
+                // spriteSize[0], spriteSize[1])
+                80, 80)
                 clearInterval(interval)
         },100)
     }

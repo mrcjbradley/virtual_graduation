@@ -17,18 +17,21 @@ class Graduate {
         this.ctx.drawImage(ceremony.audienceChairs, 20, 349, 850, 70)
         this.ctx.drawImage(ceremony.audienceChairs, 20, 349, 850, 130)
 
+        this.ctx.drawImage(ceremony.diploma, 440, 235, 20, 20);
+
         this.ctx.drawImage(ceremony.megamanSpriteSheet,
             runningSprites[i % runningSprites.length][0], runningSprites[i % runningSprites.length][1],
             spriteSize[0], spriteSize[1],
             startingPosition[0], startingPosition[1],
-            spriteSize[0], spriteSize[1])
+            // spriteSize[0], spriteSize[1])
+            80, 80)
         
-        this.ctx.drawImage(this.img_url, 350, 70, 180, 160)
+        this.ctx.drawImage(this.img_url, 350, 70, 200, 160)
 
     }
 
     moveAcrossScreen(ceremony,button) {
-        let startingPosition = [80, 250]
+        let startingPosition = [80, 245]
         let jumpSprite = [300, 100] //might get to use this later
         let studentName = document.querySelector("#student")
         studentName.innerHTML = this.name

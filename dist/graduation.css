@@ -37,13 +37,15 @@
 }
 
 .throwing-hats-gif{
-    height: 500px
+    height: 500px;
 }
 
 .throwing-hats-gif-container{
     display: flex;
     align-items: flex-end;
     flex-direction: column;
+    position: relative;
+    top: -300px;
 }
 
 body{
