@@ -32,7 +32,7 @@
 
 .title-text {
     width: fit-content;
-    font-size: 60px;
+    font-size: 40px;
     background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -50,6 +50,7 @@
 }
 
 .cohort-title-container{
+    padding-top: 20px;
     display: flex;
     align-items: center;
 }
@@ -64,6 +65,7 @@
     flex-direction: column;
     position: relative;
     top: -320px;
+    z-index: -5;
 } 
 
 body{
@@ -85,3 +87,19 @@ body{
     height: 650px;
 }
 
+.left {
+    position: relative;
+    left: 200px;
+}
+
+.right {
+    position: relative;
+    right: 200px;
+}
+
+.graduate-title {
+    color: red;
+    background-color: white;
+    padding: 5px;
+    text-align: center;
+}
