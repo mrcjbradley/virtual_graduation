@@ -63,8 +63,8 @@
     align-items: flex-end;
     flex-direction: column;
     position: relative;
-    top: -300px;
-}
+    top: -320px;
+} 
 
 body{
     color: white;
@@ -75,5 +75,13 @@ body{
 .student-names-container {
     position: relative;
     top: -140px;
+}
+
+#ol1 {
+    height: 650px;
+}
+
+#ol2 {
+    height: 650px;
 }
 
