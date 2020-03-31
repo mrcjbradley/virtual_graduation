@@ -3,6 +3,15 @@
     justify-content: center;
 }
 
+#next-student {
+    width: 100px;
+    text
+}
+
+.debug {
+    display: none;
+}
+
 .title-container{
     display: flex;
     align-items: center;
@@ -12,10 +21,18 @@
 #student{
     /* text-align: center; */
     padding-top: 20px;
-    height: 50px;
+    height: 60px;
     margin: auto;
     width: fit-content;
     font-size: 50px;
+    background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.title-text {
+    width: fit-content;
+    font-size: 60px;
     background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -25,6 +42,7 @@
     display: flex;
     justify-content: space-around;
 }
+
 .app-academy-logo{
     height: 50px;
     width: auto;
@@ -51,5 +69,11 @@
 body{
     color: white;
     background: rgb(26, 18, 18);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.student-names-container {
+    position: relative;
+    top: -140px;
 }
 

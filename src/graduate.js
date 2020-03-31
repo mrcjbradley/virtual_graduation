@@ -17,7 +17,7 @@ class Graduate {
         this.ctx.drawImage(ceremony.audienceChairs, 20, 349, 850, 70)
         this.ctx.drawImage(ceremony.audienceChairs, 20, 349, 850, 130)
 
-        this.ctx.drawImage(ceremony.diploma, 440, 235, 20, 20);
+        this.ctx.drawImage(ceremony.diploma, 440, 230, 20, 20);
 
         this.ctx.drawImage(ceremony.megamanSpriteSheet,
             runningSprites[i % runningSprites.length][0], runningSprites[i % runningSprites.length][1],
@@ -26,7 +26,7 @@ class Graduate {
             // spriteSize[0], spriteSize[1])
             80, 80)
         
-        this.ctx.drawImage(this.img_url, 350, 70, 200, 160)
+        this.ctx.drawImage(this.img_url, 360, 65, 180, 150)
 
     }
 
