@@ -12,13 +12,14 @@ class Ceremony {
         this.stage.src = './pixel_art_stage.png';
         this.audienceChairs.src = "./theatre_chairs.png";
         this.diploma.src = "./diploma.png";
+
     }
 
     constructStage() {
         let waitingSprite = [100, 100];
         let spriteSize = [50, 50]
 
-        let interval = setInterval(() => {
+        this.interval = setInterval(() => {
             this.ctx.drawImage(this.stage, 20, 50, 850, 300);
             this.ctx.drawImage(this.audienceChairs, 20, 349, 850, 70)
             this.ctx.drawImage(this.audienceChairs, 20, 349, 850, 130)
@@ -28,7 +29,7 @@ class Ceremony {
                 80, 245,
                 // spriteSize[0], spriteSize[1])
                 80, 80)
-                clearInterval(interval)
+                // clearInterval(this.interval)
         },100)
     }
 

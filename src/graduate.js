@@ -31,6 +31,7 @@ class Graduate {
     }
 
     moveAcrossScreen(ceremony,button) {
+        clearInterval(ceremony.interval);
         let startingPosition = [80, 245]
         let jumpSprite = [300, 100] //might get to use this later
         let studentName = document.querySelector("#student")
