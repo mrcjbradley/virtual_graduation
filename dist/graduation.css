@@ -103,3 +103,7 @@ body{
     padding: 5px;
     text-align: center;
 }
+
+#punch {
+    display: none;
+}

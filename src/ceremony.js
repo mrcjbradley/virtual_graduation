@@ -7,12 +7,13 @@ class Ceremony {
         this.stage = new Image();
         this.audienceChairs = new Image();
         this.diploma = new Image();
+        this.aalogo = new Image();
 
         this.megamanSpriteSheet.src = "./megaman_sprite_sheet.png";
         this.stage.src = './pixel_art_stage.png';
         this.audienceChairs.src = "./theatre_chairs.png";
         this.diploma.src = "./diploma.png";
-
+        this.aalogo.src = "./logo.png";
     }
 
     constructStage() {

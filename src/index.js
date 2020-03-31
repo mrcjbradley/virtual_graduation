@@ -424,6 +424,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let ctx = canvas.getContext("2d")
     let ol1 = document.getElementById("ol1")
     let ol2 = document.getElementById("ol2")
+    let punch = document.getElementById("punch");
     let submitButton = document.querySelector("#current-student-button")
 
     let graduates = [] 
@@ -448,6 +449,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     let ceremony = new Ceremony(ctx, graduates)
+    ceremony.sound = punch; // give sound to ceremony instance
 
     submitButton.addEventListener("click", () => {
         let input = document.querySelector("input");
