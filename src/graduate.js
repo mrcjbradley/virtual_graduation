@@ -13,9 +13,9 @@ class Graduate {
 
         this.ctx.clearRect(0, 0, 1000, 1000)
 
-        this.ctx.drawImage(ceremony.stage, 20, 50, 450, 300);
-        this.ctx.drawImage(ceremony.audienceChairs, 20, 349, 450, 70)
-        this.ctx.drawImage(ceremony.audienceChairs, 20, 349, 450, 130)
+        this.ctx.drawImage(ceremony.stage, 20, 50, 850, 300);
+        this.ctx.drawImage(ceremony.audienceChairs, 20, 349, 850, 70)
+        this.ctx.drawImage(ceremony.audienceChairs, 20, 349, 850, 130)
 
         this.ctx.drawImage(ceremony.megamanSpriteSheet,
             runningSprites[i % runningSprites.length][0], runningSprites[i % runningSprites.length][1],
@@ -23,23 +23,23 @@ class Graduate {
             startingPosition[0], startingPosition[1],
             spriteSize[0], spriteSize[1])
         
-        this.ctx.drawImage(this.img_url, 150, 100, 200, 150)
+        this.ctx.drawImage(this.img_url, 350, 70, 180, 160)
 
     }
 
     moveAcrossScreen(ceremony,button) {
-        let startingPosition = [50, 250]
+        let startingPosition = [80, 250]
         let jumpSprite = [300, 100] //might get to use this later
         let studentName = document.querySelector("#student")
         studentName.innerHTML = this.name
         let i = 0;
         let interval = setInterval(() => {
-            startingPosition[0] += 10
+            startingPosition[0] += 20
             i++
 
             this.drawGraduate(ceremony,i, startingPosition)
 
-            if (startingPosition[0] === 420) {
+            if (startingPosition[0] >= 800) {
                 clearInterval(interval)
                 this.ctx.clearRect(0, 0, 1000, 1000)
                 ceremony.constructStage()

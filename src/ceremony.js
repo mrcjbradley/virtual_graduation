@@ -18,13 +18,13 @@ class Ceremony {
         let spriteSize = [50, 50]
 
         let interval = setInterval(() => {
-            this.ctx.drawImage(this.stage, 20, 50, 450, 300);
-            this.ctx.drawImage(this.audienceChairs, 20, 349, 450, 70)
-            this.ctx.drawImage(this.audienceChairs, 20, 349, 450, 130)
+            this.ctx.drawImage(this.stage, 20, 50, 850, 300);
+            this.ctx.drawImage(this.audienceChairs, 20, 349, 850, 70)
+            this.ctx.drawImage(this.audienceChairs, 20, 349, 850, 130)
             this.ctx.drawImage(this.megamanSpriteSheet,
                 waitingSprite[0], waitingSprite[1],
                 spriteSize[0], spriteSize[1],
-                50, 250,
+                80, 250,
                 spriteSize[0], spriteSize[1])
                 clearInterval(interval)
         },100)
