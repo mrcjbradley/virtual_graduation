@@ -9,11 +9,11 @@ class Ceremony {
         this.diploma = new Image();
         this.aalogo = new Image();
 
-        this.megamanSpriteSheet.src = "./assets/megaman_sprite_sheet.png";
-        this.stage.src = './assets/pixel_art_stage.png';
-        this.audienceChairs.src = "./assets/theatre_chairs.png";
-        this.diploma.src = "./assets/diploma.png";
-        this.aalogo.src = "./assets/logo.png";
+        this.megamanSpriteSheet.src = "./dist/assets/megaman_sprite_sheet.png";
+        this.stage.src = './dist/assets/pixel_art_stage.png';
+        this.audienceChairs.src = "./dist/assets/theatre_chairs.png";
+        this.diploma.src = "./dist/assets/diploma.png";
+        this.aalogo.src = "./dist/assets/logo.png";
     }
 
     constructStage() {
