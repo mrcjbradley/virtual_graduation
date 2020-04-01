@@ -45,14 +45,17 @@ class Graduate {
                 80, 80)
         }
 
-        this.ctx.drawImage(this.img_url, 360, 65, 170, 150);
+        let photoHeight = 170;
+        let photoWidth = 150;
+
+        this.ctx.drawImage(this.img_url, 375, 55, photoWidth, photoHeight);
 
         if (startingPosition[0] < 440) {
-            this.ctx.drawImage(ceremony.diploma, 440, 230, 20, 20); //draw diploma
+            this.ctx.drawImage(ceremony.diploma, 440, 235, 20, 20); //draw diploma
         } else if (startingPosition[0] === 440) {
             ceremony.sound.play();
         } else {
-            this.ctx.drawImage(ceremony.aalogo, 360, 65, 170, 150);
+            this.ctx.drawImage(ceremony.aalogo, 375, 55, 150, 150);
         }
     }
 
