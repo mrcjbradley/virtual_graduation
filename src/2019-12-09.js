@@ -1,4 +1,4 @@
-[
+const students = [
   {
     "id": 4420,
     "name": "Albert Chen",
@@ -413,4 +413,6 @@
     "imageUrl": "http://s3-us-west-2.amazonaws.com/aa-progress-tracker/students/avatars/000/004/408/medium/Zeke_Mostov_2.jpg?1578537022",
     "occup": "student"
   },
-]
+];
+
+export default students;
