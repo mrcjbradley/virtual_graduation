@@ -45,17 +45,14 @@ class Graduate {
                 80, 80)
         }
 
-        let photoHeight = 170;
-        let photoWidth = 150;
-
-        this.ctx.drawImage(this.img_url, 375, 55, photoWidth, photoHeight);
+        this.scaleGraduateImg();
 
         if (startingPosition[0] < 440) {
             this.ctx.drawImage(ceremony.diploma, 440, 235, 20, 20); //draw diploma
         } else if (startingPosition[0] === 440) {
             ceremony.sound.play();
         } else {
-            this.ctx.drawImage(ceremony.aalogo, 375, 55, 150, 150);
+            this.ctx.drawImage(ceremony.aalogo, 365, 55, 170, 150);
         }
     }
 
@@ -82,6 +79,14 @@ class Graduate {
                 studentName.innerHTML  = ""
             }
         }, 100)
+    }
+
+    scaleGraduateImg() {
+        let scale = Math.max(150 / this.img_url.width, 170 / this.img_url.height);
+        console.log("scale", scale)
+        let x = 450 - ((this.img_url.width / 2) * scale);
+        let y = 140 - ((this.img_url.height / 2) * scale);
+        this.ctx.drawImage(this.img_url, x, y, this.img_url.width * scale, this.img_url.height * scale);
     }
 
     jumpAndGrabDiploma(ceremony, i, startingPosition) {
