@@ -36,9 +36,9 @@ const students = [
     "occup": "student"
   },
   {
-    "id": 4720,
-    "name": "Christian Jason Wintery",
-    "imageUrl": "http://s3-us-west-2.amazonaws.com/aa-progress-tracker/students/avatars/000/004/720/medium/Jason_Wintery_3.JPG?1583204677",
+    "id": 4751,
+    "name": "Chef Pangburn",
+    "imageUrl": "http://s3-us-west-2.amazonaws.com/aa-progress-tracker/students/avatars/000/004/751/medium/Shaphen_Chef_Pangburn_2.JPG?1583209655",
     "occup": "student"
   },
   {
@@ -156,6 +156,12 @@ const students = [
     "occup": "student"
   },
   {
+    "id": 4720,
+    "name": "Jason Wintery",
+    "imageUrl": "http://s3-us-west-2.amazonaws.com/aa-progress-tracker/students/avatars/000/004/720/medium/Jason_Wintery_3.JPG?1583204677",
+    "occup": "student"
+  },
+  {
     "id": 4713,
     "name": "Javier Castro",
     "imageUrl": "http://s3-us-west-2.amazonaws.com/aa-progress-tracker/students/avatars/000/004/713/medium/Javier_Castro_3.JPG?1583207627",
@@ -165,6 +171,12 @@ const students = [
     "id": 4710,
     "name": "Jenn Huynh",
     "imageUrl": "http://s3-us-west-2.amazonaws.com/aa-progress-tracker/students/avatars/000/004/710/medium/Jennifer_Huynh_1.JPG?1583207759",
+    "occup": "student"
+  },
+  {
+    "id": 4724,
+    "name": "Joseph Deng",
+    "imageUrl": "http://s3-us-west-2.amazonaws.com/aa-progress-tracker/students/avatars/000/004/724/medium/Joseph_Deng_4.JPG?1583210390",
     "occup": "student"
   },
   {
@@ -222,14 +234,8 @@ const students = [
     "occup": "student"
   },
   {
-    "id": 4751,
-    "name": "Chef Pangburn",
-    "imageUrl": "http://s3-us-west-2.amazonaws.com/aa-progress-tracker/students/avatars/000/004/751/medium/Shaphen_Chef_Pangburn_2.JPG?1583209655",
-    "occup": "student"
-  },
-  {
     "id": 4743,
-    "name": "Prince Steven Touba",
+    "name": "Steven Touba",
     "imageUrl": "http://s3-us-west-2.amazonaws.com/aa-progress-tracker/students/avatars/000/004/743/medium/Steven_Touba_5.JPG?1583209742",
     "occup": "student"
   },
@@ -255,12 +261,6 @@ const students = [
     "id": 4748,
     "name": "Willie Wang",
     "imageUrl": "http://s3-us-west-2.amazonaws.com/aa-progress-tracker/students/avatars/000/004/748/medium/Willie_Wang_1.JPG?1583210290",
-    "occup": "student"
-  },
-  {
-    "id": 4724,
-    "name": "Joseph Deng",
-    "imageUrl": "http://s3-us-west-2.amazonaws.com/aa-progress-tracker/students/avatars/000/004/724/medium/Joseph_Deng_4.JPG?1583210390",
     "occup": "student"
   },
   {
