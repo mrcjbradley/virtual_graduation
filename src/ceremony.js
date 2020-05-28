@@ -3,13 +3,13 @@ class Ceremony {
         this.ctx = ctx;
         this.graduates = graduates;
         this.currentStudent = currentStudent;
-        this.megamanSpriteSheet = new Image();
+        this.potatSpriteSheet = new Image();
         this.stage = new Image();
         this.audienceChairs = new Image();
         this.diploma = new Image();
         this.aalogo = new Image();
 
-        this.megamanSpriteSheet.src = "./dist/assets/megaman_sprite_sheet.png";
+        this.potatSpriteSheet.src = "./dist/assets/potat-sprite-sheet2.png";
         this.stage.src = './dist/assets/pixel_art_stage.png';
         this.audienceChairs.src = "./dist/assets/theatre_chairs.png";
         this.diploma.src = "./dist/assets/diploma.png";
@@ -17,14 +17,14 @@ class Ceremony {
     }
 
     constructStage() {
-        let waitingSprite = [100, 100];
-        let spriteSize = [50, 50]
+        let waitingSprite = [750, 0];
+        let spriteSize = [375, 500]
 
         this.interval = setInterval(() => {
             this.ctx.drawImage(this.stage, 20, 50, 850, 300);
             this.ctx.drawImage(this.audienceChairs, 20, 349, 850, 70)
             this.ctx.drawImage(this.audienceChairs, 20, 349, 850, 130)
-            this.ctx.drawImage(this.megamanSpriteSheet,
+            this.ctx.drawImage(this.potatSpriteSheet,
                 waitingSprite[0], waitingSprite[1],
                 spriteSize[0], spriteSize[1],
                 80, 245,
