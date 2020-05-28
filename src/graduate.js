@@ -35,8 +35,8 @@ class Graduate {
             this.ctx.drawImage(ceremony.potatSpriteSheet,
                 dashSprites[i % dashSprites.length][0], dashSprites[i % runningSprites.length][1],
                 spriteSize[0], spriteSize[1],
-                startingPosition[0], startingPosition[1] - 40,
-                130, 130)
+                startingPosition[0], startingPosition[1],
+                80, 80)
         } else {
             this.ctx.drawImage(ceremony.potatSpriteSheet,
                 runningSprites[i % runningSprites.length][0], runningSprites[i % runningSprites.length][1],
