@@ -9,7 +9,7 @@ class Ceremony {
         this.diploma = new Image();
         this.aalogo = new Image();
 
-        this.potatSpriteSheet.src = "./dist/assets/potat-sprite-sheet2.png";
+        this.potatSpriteSheet.src = "./dist/assets/potat-sprite-sheet.png";
         this.stage.src = './dist/assets/pixel_art_stage.png';
         this.audienceChairs.src = "./dist/assets/theatre_chairs.png";
         this.diploma.src = "./dist/assets/diploma.png";
