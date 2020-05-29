@@ -6,11 +6,12 @@ class Graduate {
         this.img_url.src = img_url
     }
 
-    drawGraduate(ceremony,i,startingPosition, jumpHeight){
+    drawGraduate(ceremony, i, startingPosition, jumpHeight){
         let spriteSize = [375, 500]
         let runningSprites = [[0, 0], [375, 0], [0, 0]];
         let dashSprites = [[0, 0], [375, 0], [0, 0]];
-        let jumpSprite = [1125, 0]
+        let jumpSprite = [1125, 0];
+        let grabSprite = [0, 500];
 
         this.ctx.clearRect(0, 0, 1000, 1000)
 
@@ -18,7 +19,21 @@ class Graduate {
         this.ctx.drawImage(ceremony.audienceChairs, 20, 349, 850, 70)
         this.ctx.drawImage(ceremony.audienceChairs, 20, 349, 850, 130)
 
-        if (startingPosition[0] >= 350 && startingPosition[0] <= 490) {
+        this.scaleGraduateImg();
+
+        if (startingPosition[0] >= 390 && startingPosition[0] <= 490) { // grabbing diploma
+            if (startingPosition[0] <= 420) {
+                jumpHeight[0] = jumpHeight[0] + 5;
+            } else {
+                jumpHeight[0] = jumpHeight[0] - 5;
+            }
+
+            this.ctx.drawImage(ceremony.potatSpriteSheet,
+                grabSprite[0], grabSprite[1],
+                spriteSize[0], spriteSize[1],
+                startingPosition[0], startingPosition[1] - jumpHeight,
+                80, 80)
+        } else if (startingPosition[0] >= 350 && startingPosition[0] <= 490) {
             if (startingPosition[0] <= 420) {
                 jumpHeight[0] = jumpHeight[0] + 11;
             } else {
@@ -44,8 +59,6 @@ class Graduate {
                 startingPosition[0], startingPosition[1],
                 80, 80)
         }
-
-        this.scaleGraduateImg();
 
         if (startingPosition[0] < 440) {
             this.ctx.drawImage(ceremony.diploma, 440, 235, 20, 20); //draw diploma
@@ -83,7 +96,6 @@ class Graduate {
 
     scaleGraduateImg() {
         let scale = Math.max(150 / this.img_url.width, 170 / this.img_url.height);
-        console.log("scale", scale)
         let x = 450 - ((this.img_url.width / 2) * scale);
         let y = 140 - ((this.img_url.height / 2) * scale);
         this.ctx.drawImage(this.img_url, x, y, this.img_url.width * scale, this.img_url.height * scale);
