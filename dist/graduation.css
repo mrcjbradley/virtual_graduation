@@ -1,6 +1,7 @@
 #canvas-container{
     display: flex;
     justify-content: center;
+    position: relative;
 }
 #videos{
     display: flex;
@@ -10,7 +11,7 @@
 
 #next-student {
     width: 100px;
-    text
+    /* text */
 }
 
 .debug {
@@ -30,7 +31,7 @@
     margin: auto;
     width: fit-content;
     font-size: 50px;
-    background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+    background-image: linear-gradient(to left,blue,yellow);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -38,7 +39,9 @@
 .title-text {
     width: fit-content;
     font-size: 40px;
-    background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+    /* background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red); */
+    background-image: linear-gradient(to left,blue,yellow);
+    /* color: yellow; */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -61,27 +64,28 @@
 }
 
 .throwing-hats-gif{
-    height: 500px;
+    height: 30%;
 }
 
 .throwing-hats-gif-container{
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     flex-direction: column;
-    position: relative;
-    top: -320px;
-    z-index: -5;
+    position: absolute;
+    /* position: absolute; */
+    /* top: -320px; */
+    z-index: -1;
 } 
 
 body{
     color: white;
-    background: rgb(26, 18, 18);
+    background: rgb(0, 0, 0);
     font-family: Arial, Helvetica, sans-serif;
 }
 
 .student-names-container {
     position: relative;
-    top: -140px;
+    top: -90px;
 }
 
 #ol1 {
@@ -93,13 +97,13 @@ body{
 }
 
 .left {
-    position: relative;
+    position: relative; 
     left: 200px;
 }
 
 .right {
-    position: relative;
-    right: 200px;
+    position: relative; 
+    right: 200px; 
 }
 
 .graduate-title {
@@ -136,4 +140,49 @@ body {
     bottom: 0px;
     z-index: -19;
     opacity: 0.3;
+}
+
+.background-container img{
+    width:100%;
+    position: relative;
+    bottom: 20px
+}
+
+.throwing-hat-student-name-container{
+    position: absolute;
+    z-index: -1;
+}
+
+canvas{
+    width: 60%;
+    height: 80%;
+}
+
+.throwing-hat-student-name-container .left{
+    position: relative;
+    right: 110%;
+    bottom:200px;
+}
+
+.throwing-hat-student-name-container .right{
+    position: relative;
+    left: 110%;
+    bottom:200px;
+}
+
+.next-student-container{
+    display:flex;
+    justify-content: center;
+    position: relative;
+    bottom:290px
+}
+
+.audio-container{
+    display:flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.firework-gif{
+    width: 80%;
 }

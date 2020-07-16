@@ -4,61 +4,59 @@ class Graduate {
         this.name = name
         this.img_url = new Image()
         this.img_url.src = img_url
+        this.canvas = document.querySelector("canvas")
     }
 
-    drawGraduate(ceremony,i,startingPosition, jumpHeight){
-        let spriteSize = [50, 50]
-        let runningSprites = [[150, 0], [200, 0], [250, 0]];
-        let dashSprites = [[350, 250], [400, 250], [450, 250]];
-        let jumpSprite = [300, 150]
+    drawGraduate(ceremony, i, startingPosition, jumpHeight) {
+        let spriteSize = [270, 270]
+        let runningSprites = [[340, 270], [640, 270], [940, 270]];
+        // let dashSprites = [[350, 250], [400, 250], [450, 250]];
+        let jumpSprite = [0, 550]
 
         this.ctx.clearRect(0, 0, 1000, 1000)
 
-        this.ctx.drawImage(ceremony.stage, 20, 50, 850, 300);
-        this.ctx.drawImage(ceremony.audienceChairs, 20, 349, 850, 70)
-        this.ctx.drawImage(ceremony.audienceChairs, 20, 349, 850, 130)
+        this.ctx.drawImage(ceremony.stage, 0, 0, this.canvas.width, 600);
+        this.ctx.drawImage(ceremony.audienceChairs, 0, 600, this.canvas.width, 70)
+        this.ctx.drawImage(ceremony.audienceChairs, 0, 670, this.canvas.width, 70)
 
-        if (startingPosition[0] >= 350 && startingPosition[0] <= 490) {
-            if (startingPosition[0] <= 420) {
-                jumpHeight[0] = jumpHeight[0] + 11;
+        this.scaleGraduateImg();
+        if (startingPosition[0] >= 600 && startingPosition[0] <= 810) {
+            if (startingPosition[0] <= 810) {
+                jumpHeight[0] = jumpHeight[0] + 10;
             } else {
-                jumpHeight[0] = jumpHeight[0] - 11;
+                jumpHeight[0] = jumpHeight[0] - 10;
             }
 
-            this.ctx.drawImage(ceremony.megamanSpriteSheet,
+            this.ctx.drawImage(ceremony.bearSpriteSheet,
                 // runningSprites[i % runningSprites.length][0], runningSprites[i % runningSprites.length][1],
-                jumpSprite[0], jumpSprite[1],
+                jumpSprite[0], jumpSprite[1] - 20,
                 spriteSize[0], spriteSize[1],
                 startingPosition[0], startingPosition[1] - jumpHeight,
                 80, 80)
-        } else if (startingPosition[0] > 490) { // after landing from diploma catch
-            this.ctx.drawImage(ceremony.megamanSpriteSheet,
-                dashSprites[i % dashSprites.length][0], dashSprites[i % runningSprites.length][1],
-                spriteSize[0], spriteSize[1],
-                startingPosition[0], startingPosition[1] - 40,
-                130, 130)
         } else {
-            this.ctx.drawImage(ceremony.megamanSpriteSheet,
+            this.ctx.drawImage(ceremony.bearSpriteSheet,
                 runningSprites[i % runningSprites.length][0], runningSprites[i % runningSprites.length][1],
                 spriteSize[0], spriteSize[1],
                 startingPosition[0], startingPosition[1],
                 80, 80)
         }
 
-        this.scaleGraduateImg();
 
-        if (startingPosition[0] < 440) {
-            this.ctx.drawImage(ceremony.diploma, 440, 235, 20, 20); //draw diploma
-        } else if (startingPosition[0] === 440) {
+        if (startingPosition[0] < 750) {
+            this.ctx.drawImage(ceremony.trophy, 720, 300, 50, 80); //draw diploma
+        }
+
+        if (startingPosition[0] < 1200) {
             ceremony.sound.play();
-        } else {
-            this.ctx.drawImage(ceremony.aalogo, 365, 55, 170, 150);
+        } else if (startingPosition[0] === 1200) {
+            ceremony.sound.pause()
+            ceremony.sound.currentTime = 0
         }
     }
 
-    moveAcrossScreen(ceremony,button) {
+    moveAcrossScreen(ceremony, button) {
         clearInterval(ceremony.interval);
-        let startingPosition = [80, 245]
+        let startingPosition = [80, 445]
         let jumpSprite = [300, 100] //might get to use this later
         let studentName = document.querySelector("#student")
         studentName.innerHTML = this.name
@@ -66,26 +64,24 @@ class Graduate {
         let jumpHeight = [0];
 
         let interval = setInterval(() => {
-            startingPosition[0] += 20
+            startingPosition[0] += 10
             i++
+            this.drawGraduate(ceremony, i, startingPosition, jumpHeight)
 
-            this.drawGraduate(ceremony,i, startingPosition, jumpHeight)
-
-            if (startingPosition[0] >= 740) {
+            if (startingPosition[0] >= 1270) {
                 clearInterval(interval)
                 this.ctx.clearRect(0, 0, 1000, 1000)
                 ceremony.constructStage()
                 button.disabled = false
-                studentName.innerHTML  = ""
+                studentName.innerHTML = ""
             }
-        }, 100)
+        }, 90)
     }
 
     scaleGraduateImg() {
-        let scale = Math.max(150 / this.img_url.width, 170 / this.img_url.height);
-        console.log("scale", scale)
-        let x = 450 - ((this.img_url.width / 2) * scale);
-        let y = 140 - ((this.img_url.height / 2) * scale);
+        let scale = Math.max(250 / this.img_url.width, 150 / this.img_url.height);
+        let x = 750 - ((this.img_url.width / 2) * scale);
+        let y = 350 - ((this.img_url.height / 2) * scale);
         this.ctx.drawImage(this.img_url, x, y, this.img_url.width * scale, this.img_url.height * scale);
     }
 
