@@ -12,7 +12,7 @@ class Graduate {
         // let runningSprites = [[0, 0], [375, 0], [0, 0]];
         // let dashSprites = [[0, 0], [375, 0], [0, 0]];
         // let jumpSprite = [1125, 0];
-        // let grabSprite = [0, 500];
+        let grabSprite = [0, 500];
 
         // megaman
         let spriteSize = [50, 50]
@@ -31,13 +31,14 @@ class Graduate {
 
         if (startingPosition[0] >= 390 && startingPosition[0] <= 490) { // grabbing diploma
             if (startingPosition[0] <= 420) {
-                jumpHeight[0] = jumpHeight[0] + 5;
+                jumpHeight[0] = jumpHeight[0] + 11; // +5 for potat (instead of 11)
             } else {
-                jumpHeight[0] = jumpHeight[0] - 5;
+                jumpHeight[0] = jumpHeight[0] - 11; // -5 for potat
             }
 
             this.ctx.drawImage(ceremony.megamanSpriteSheet,
-                grabSprite[0], grabSprite[1],
+                // grabSprite[0], grabSprite[1], // potat
+                jumpSprite[0], jumpSprite[1], // megaman
                 spriteSize[0], spriteSize[1],
                 startingPosition[0], startingPosition[1] - jumpHeight,
                 80, 80)
