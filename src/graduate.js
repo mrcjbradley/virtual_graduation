@@ -7,11 +7,19 @@ class Graduate {
     }
 
     drawGraduate(ceremony, i, startingPosition, jumpHeight){
-        let spriteSize = [375, 500]
-        let runningSprites = [[0, 0], [375, 0], [0, 0]];
-        let dashSprites = [[0, 0], [375, 0], [0, 0]];
-        let jumpSprite = [1125, 0];
+        // potat
+        // let spriteSize = [375, 500]
+        // let runningSprites = [[0, 0], [375, 0], [0, 0]];
+        // let dashSprites = [[0, 0], [375, 0], [0, 0]];
+        // let jumpSprite = [1125, 0];
         let grabSprite = [0, 500];
+
+        // megaman
+        let spriteSize = [50, 50]
+        let runningSprites = [[150, 0], [200, 0], [250, 0]];
+        let dashSprites = [[350, 250], [400, 250], [450, 250]];
+        let jumpSprite = [300, 150]
+
 
         this.ctx.clearRect(0, 0, 1000, 1000)
 
@@ -23,13 +31,14 @@ class Graduate {
 
         if (startingPosition[0] >= 390 && startingPosition[0] <= 490) { // grabbing diploma
             if (startingPosition[0] <= 420) {
-                jumpHeight[0] = jumpHeight[0] + 5;
+                jumpHeight[0] = jumpHeight[0] + 11; // +5 for potat (instead of 11)
             } else {
-                jumpHeight[0] = jumpHeight[0] - 5;
+                jumpHeight[0] = jumpHeight[0] - 11; // -5 for potat
             }
 
-            this.ctx.drawImage(ceremony.potatSpriteSheet,
-                grabSprite[0], grabSprite[1],
+            this.ctx.drawImage(ceremony.megamanSpriteSheet,
+                // grabSprite[0], grabSprite[1], // potat
+                jumpSprite[0], jumpSprite[1], // megaman
                 spriteSize[0], spriteSize[1],
                 startingPosition[0], startingPosition[1] - jumpHeight,
                 80, 80)
@@ -40,20 +49,20 @@ class Graduate {
                 jumpHeight[0] = jumpHeight[0] - 11;
             }
 
-            this.ctx.drawImage(ceremony.potatSpriteSheet,
+            this.ctx.drawImage(ceremony.megamanSpriteSheet,
                 // runningSprites[i % runningSprites.length][0], runningSprites[i % runningSprites.length][1],
                 jumpSprite[0], jumpSprite[1],
                 spriteSize[0], spriteSize[1],
                 startingPosition[0], startingPosition[1] - jumpHeight,
                 80, 80)
         } else if (startingPosition[0] > 490) { // after landing from diploma catch
-            this.ctx.drawImage(ceremony.potatSpriteSheet,
+            this.ctx.drawImage(ceremony.megamanSpriteSheet,
                 dashSprites[i % dashSprites.length][0], dashSprites[i % runningSprites.length][1],
                 spriteSize[0], spriteSize[1],
                 startingPosition[0], startingPosition[1],
                 80, 80)
         } else {
-            this.ctx.drawImage(ceremony.potatSpriteSheet,
+            this.ctx.drawImage(ceremony.megamanSpriteSheet,
                 runningSprites[i % runningSprites.length][0], runningSprites[i % runningSprites.length][1],
                 spriteSize[0], spriteSize[1],
                 startingPosition[0], startingPosition[1],
