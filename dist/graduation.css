@@ -30,9 +30,21 @@
     margin: auto;
     width: fit-content;
     font-size: 50px;
-    background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+    color: white;
+    /* background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent; */
+}
+
+#superlative {
+    padding-top: 20px;
+    height: 70px;
+    margin: auto;
+    width: fit-content;
+    max-width: 800px;
+    font-size: 35px;
+    color: white;
+    text-align: center;
 }
 
 .title-text {

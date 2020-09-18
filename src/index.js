@@ -1,19 +1,20 @@
-import { Graduate } from "./graduate"
-import Ceremony from "./ceremony" //there is no reason that these two imports are different. I was messing around with how you can import files
-import students from  "./students/2020-04-06";
+import { Graduate } from "./graduate";
+import Ceremony from "./ceremony"; //there is no reason that these two imports are different. I was messing around with how you can import files
+import students from  "./students/2020-06-01";
+import superlatives from "./superlatives/2020-06-01";
 
 document.addEventListener("DOMContentLoaded", () => {
-    let canvas = document.getElementById("canvas")
-    let nextStudentButton = document.getElementById("next-student")
-    let ctx = canvas.getContext("2d")
-    let ol1 = document.getElementById("ol1")
-    let ol2 = document.getElementById("ol2")
+    let canvas = document.getElementById("canvas");
+    let nextStudentButton = document.getElementById("next-student");
+    let ctx = canvas.getContext("2d");
+    let ol1 = document.getElementById("ol1");
+    let ol2 = document.getElementById("ol2");
     let punch = document.getElementById("punch");
-    let submitButton = document.querySelector("#current-student-button")
+    let submitButton = document.querySelector("#current-student-button");
 
     let graduates = [] 
-    students.forEach((student) => {
-        let graduate = new Graduate(ctx,student.name,student.imageUrl)
+    students.forEach((student, i) => {
+        let graduate = new Graduate(ctx,student.name, superlatives[i].body, student.imageUrl)
         graduates.push(graduate)
     })
 

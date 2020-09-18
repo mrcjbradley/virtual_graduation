@@ -1,9 +1,10 @@
 class Graduate {
-    constructor(ctx, name, img_url) {
-        this.ctx = ctx
-        this.name = name
-        this.img_url = new Image()
-        this.img_url.src = img_url
+    constructor(ctx, name, superlative, img_url) {
+        this.ctx = ctx;
+        this.name = name;
+        this.superlative = superlative;
+        this.img_url = new Image();
+        this.img_url.src = img_url;
     }
 
     drawGraduate(ceremony, i, startingPosition, jumpHeight){
@@ -80,27 +81,29 @@ class Graduate {
 
     moveAcrossScreen(ceremony,button) {
         clearInterval(ceremony.interval);
-        let startingPosition = [80, 245]
-        let jumpSprite = [300, 100] //might get to use this later
-        let studentName = document.querySelector("#student")
-        studentName.innerHTML = this.name
+        let startingPosition = [80, 245];
+        let jumpSprite = [300, 100]; //might get to use this later
+        let studentName = document.querySelector("#student");
+        let superlative = document.querySelector("#superlative")
+        studentName.innerHTML = this.name;
+        superlative.innerHTML = this.superlative;
         let i = 0;
         let jumpHeight = [0];
 
         let interval = setInterval(() => {
-            startingPosition[0] += 20
-            i++
+            startingPosition[0] += 15;
+            i++;
 
-            this.drawGraduate(ceremony,i, startingPosition, jumpHeight)
+            this.drawGraduate(ceremony,i, startingPosition, jumpHeight);
 
             if (startingPosition[0] >= 740) {
-                clearInterval(interval)
-                this.ctx.clearRect(0, 0, 1000, 1000)
-                ceremony.constructStage()
-                button.disabled = false
-                studentName.innerHTML  = ""
+                clearInterval(interval);
+                this.ctx.clearRect(0, 0, 1000, 1000);
+                ceremony.constructStage();
+                button.disabled = false;
+                // studentName.innerHTML  = "";
             }
-        }, 100)
+        }, 100);
     }
 
     scaleGraduateImg() {
