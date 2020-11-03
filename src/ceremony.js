@@ -5,6 +5,7 @@ class Ceremony {
         this.currentStudent = currentStudent;
         this.potatSpriteSheet = new Image();
         this.megamanSpriteSheet = new Image();
+        this.bananacatSpriteSheet = new Image();
         this.stage = new Image();
         this.audienceChairs = new Image();
         this.diploma = new Image();
@@ -12,6 +13,7 @@ class Ceremony {
 
         this.potatSpriteSheet.src = "./dist/assets/potat-sprite-sheet.png";
         this.megamanSpriteSheet.src = "./dist/assets/megaman_sprite_sheet.png";
+        this.bananacatSpriteSheet.src = "./dist/assets/bananacat.png"
         this.stage.src = './dist/assets/pixel_art_stage.png';
         this.stage.src = './dist/assets/new_stage.png';
         this.audienceChairs.src = "./dist/assets/theatre_chairs.png";
@@ -25,15 +27,19 @@ class Ceremony {
         // let spriteSize = [375, 500]
 
         // megaman below
-        let waitingSprite = [100, 100];
-        let spriteSize = [50, 50]
+        // let waitingSprite = [100, 100];
+        // let spriteSize = [50, 50]
+
+        //bananacat
+        let waitingSprite = [-80, -150]
+        let spriteSize = [350, 400];
 
         this.interval = setInterval(() => {
             this.ctx.drawImage(this.stage, 20, 50, 850, 300);
             this.ctx.drawImage(this.audienceChairs, 20, 349, 850, 70)
             this.ctx.drawImage(this.audienceChairs, 20, 349, 850, 130)
             // this.ctx.drawImage(this.potatSpriteSheet,
-            this.ctx.drawImage(this.megamanSpriteSheet,
+            this.ctx.drawImage(this.bananacatSpriteSheet,
                 waitingSprite[0], waitingSprite[1],
                 spriteSize[0], spriteSize[1],
                 80, 245,
