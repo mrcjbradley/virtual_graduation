@@ -1,4 +1,4 @@
-export default students = [
+export default [
   {
     "id": 5643,
     "name": "Abubokorbin (Azim) Siddiki",
