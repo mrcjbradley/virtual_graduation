@@ -2,6 +2,10 @@
     display: flex;
     justify-content: center;
 }
+
+#canvas-container canvas {
+    flex-shrink: 0;
+}
 #videos{
     display: flex;
     flex-direction: column;
@@ -136,4 +140,10 @@ body {
     bottom: 0px;
     z-index: -19;
     opacity: 0.3;
+}
+
+#stud-img {
+        width: 150px;
+    position: absolute;
+    top: 333px;
 }

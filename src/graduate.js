@@ -32,7 +32,7 @@ class Graduate {
       this.ctx.drawImage(ceremony.audienceChairs, 20, 349, 850, 70);
       this.ctx.drawImage(ceremony.audienceChairs, 20, 349, 850, 130);
 
-      this.scaleGraduateImg();
+      // this.scaleGraduateImg();
 
       if (startingPosition[0] >= 390 && startingPosition[0] <= 490) {
         // grabbing diploma
@@ -102,12 +102,12 @@ class Graduate {
       }
 
       if (startingPosition[0] < 440) {
-        this.ctx.drawImage(ceremony.diploma, 440, 235, 20, 20); //draw diploma
+        this.ctx.drawImage(ceremony.diploma, 440, 235, 40, 40); //draw diploma
       } else if (startingPosition[0] === 440) {
-        ceremony.sound.play();
-      } else {
-        this.ctx.drawImage(ceremony.aalogo, 365, 55, 170, 150);
-      }
+        ceremony.sound.play();}
+      // } else {
+      //   this.ctx.drawImage(ceremony.aalogo, 365, 55, 170, 150);
+      // }
     }
 
     moveAcrossScreen(ceremony,button) {
@@ -115,7 +115,9 @@ class Graduate {
         let startingPosition = [80, 245]
         let flipSprite = [300, 100] //might get to use this later
         let studentName = document.querySelector("#student")
+        let studentImg = document.querySelector("#stud-img")
         studentName.innerHTML = this.name
+        studentImg.src = this.img_url.src
         let i = 0;
         let jumpHeight = [0];
 
@@ -130,17 +132,17 @@ class Graduate {
                 this.ctx.clearRect(0, 0, 1000, 1000)
                 ceremony.constructStage()
                 button.disabled = false
-                studentName.innerHTML  = ""
+                // studentName.innerHTML  = ""
             }
         }, 100)
     }
 
-    scaleGraduateImg() {
-        let scale = Math.max(150 / this.img_url.width, 170 / this.img_url.height);
-        let x = 450 - ((this.img_url.width / 2) * scale);
-        let y = 140 - ((this.img_url.height / 2) * scale);
-        this.ctx.drawImage(this.img_url, x, y, this.img_url.width * scale, this.img_url.height * scale);
-    }
+    // scaleGraduateImg() {
+    //     let scale = Math.max(150 / this.img_url.width, 170 / this.img_url.height);
+    //     let x = 450 - ((this.img_url.width / 2) * scale);
+    //     let y = 140 - ((this.img_url.height / 2) * scale);
+    //     this.ctx.drawImage(this.img_url, x, y, this.img_url.width * scale, this.img_url.height * scale);
+    // }
 
     jumpAndGrabDiploma(ceremony, i, startingPosition) {
 
