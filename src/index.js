@@ -1,6 +1,6 @@
 import { Graduate } from "./graduate";
 import Ceremony from "./ceremony"; //there is no reason that these two imports are different. I was messing around with how you can import files
-import students from "./students/2021-02";
+import students from "./students/2021-06";
 
 document.addEventListener("DOMContentLoaded", () => {
   let canvas = document.getElementById("canvas");
